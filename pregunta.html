@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Pregunta desiciva</title>
+</head>
+<body>
+    <div class="container" style="margin-top: 170px;">
+        <div class="row text-center">
+            <div class="col">
+                <h2>¿Me llevas a comer a la Garufa?</h2>
+            </div>
+        </div>
+        <div class="row text-center" style="margin-top: 50px;">
+            <div class="col-4"></div>
+            <div class="col-2">
+                <button class="btn btn-lg btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" style="width: 80px;">SI</button>
+            </div>
+            <div class="col-2">
+                <button id="runawayButton" class="btn btn-lg btn-danger"  style="width: 80px; position: absolute;">NO</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--MODAL-->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="row">
+                    <h3>¿Estas seguro?</h3>
+                </div>
+                <div class="row">
+                    <h3>  No quiero que te sientas obligado</h3>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-1"></div>
+                    <div class="col10">
+                        <img src="niña.jpg" alt="" class="w-50">
+                    </div>
+                </div>
+                <div class="row g-3" style="margin-top: 30px;">
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                        <button class="btn btn-success" style="width: 100px;" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Si</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-danger" style="width: 100px;" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">No</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!--MODAL 2-->
+      <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="row">
+                    <h5>A VER REPITELO</h5>
+                </div>
+                <div class="row">
+                    <img src="pistola.png" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-warning" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresa y piensalo mejor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--MODAL 3-->
+      <div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="row text-center">
+                    <h3>Ves que no era dificil</h3>
+                    <h5>Te Amo!</h5>
+                    <h5>Tu y yo siempre asi...</h5>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-8">
+                        <img src="gatitos.png" alt="" class="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Cierra esta madre y coyeye</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById('runawayButton');
+    
+    button.addEventListener('mouseover', function () {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        // Generar nuevas posiciones para el botón dentro de los límites de la pantalla
+        const newLeft = Math.random() * (screenWidth - button.clientWidth);
+        const newTop = Math.random() * (screenHeight - button.clientHeight);
+
+        button.style.left = `${newLeft}px`;
+        button.style.top = `${newTop}px`;
+    });
+});
+
+</script>
+</html>
