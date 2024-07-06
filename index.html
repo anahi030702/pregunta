@@ -11,7 +11,7 @@
     <div class="container" style="margin-top: 170px;">
         <div class="row text-center">
             <div class="col">
-                <h2>¿Me llevas a comer a la Garufa?</h2>
+                <h2>¿Me compras un pastel?</h2>
             </div>
         </div>
         <div class="row text-center" style="margin-top: 50px;">
@@ -102,21 +102,28 @@
       
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const button = document.getElementById('runawayButton');
-    
-    button.addEventListener('mouseover', function () {
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+   document.addEventListener('DOMContentLoaded', function () {
+            const boton = document.getElementById('runawayButton');
+            const body = document.body;
+            const maxWidth = body.clientWidth - boton.offsetWidth;
+            const maxHeight = body.clientHeight - boton.offsetHeight;
 
-        // Generar nuevas posiciones para el botón dentro de los límites de la pantalla
-        const newLeft = Math.random() * (screenWidth - button.clientWidth);
-        const newTop = Math.random() * (screenHeight - button.clientHeight);
+            function moverBoton() {
+                const randomX = Math.floor(Math.random() * maxWidth);
+                const randomY = Math.floor(Math.random() * maxHeight);
+                boton.style.left = randomX + 'px';
+                boton.style.top = randomY + 'px';
+            }
 
-        button.style.left = `${newLeft}px`;
-        button.style.top = `${newTop}px`;
-    });
-});
+            boton.addEventListener('touchstart', function () {
+                moverBoton();
+            });
+
+            // Asegurarse de que el botón también huya en dispositivos con mouse
+            boton.addEventListener('mouseover', function () {
+                moverBoton();
+            });
+        });
 
 </script>
 </html>
